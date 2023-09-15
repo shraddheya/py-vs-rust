@@ -1,0 +1,12 @@
+services:
+  daulat:
+    entrypoint:
+    - sleep
+    - infinity
+    image: shraddheya/rust:docker-dev
+    init: true
+    volumes:
+    - type: bind
+      source: //var/run/docker.sock
+      target: /var/run/docker.sock
+    - "./rust:/app"
